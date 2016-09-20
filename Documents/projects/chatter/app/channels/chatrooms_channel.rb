@@ -8,6 +8,8 @@ class ChatroomsChannel < ApplicationCable::Channel
 
   def unsubscribed
     stop_all_streams
-    # Any cleanup needed when channel is unsubscribed
+  end
+  
+  def send_message
   end
 end
