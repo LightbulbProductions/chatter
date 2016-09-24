@@ -1,8 +1,8 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+
 handleVisibilityChange = ->
-	
     $strike = $(".strike")
     if $strike.length > 0
       chatroom_id = $("[data-behavior='messages']").data("chatroom-id")
@@ -22,7 +22,9 @@ $(document).on "turbolinks:load", ->
 
     chatroom_id = $("[data-behavior='messages']").data("chatroom-id")
     body        = $("#message_body")
+	
+	
+    App.chatrooms.send(chatroom_id, body.val())
 
-    App.chatrooms.send_message(chatroom_id, body.val())
-
-	body.val("")
+    body.val("")
+    
