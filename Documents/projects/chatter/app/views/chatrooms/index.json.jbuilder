@@ -1,4 +1,1 @@
-json.array!(@chatrooms) do |chatroom|
-  json.extract! chatroom, :id, :name
-  json.url chatroom_url(chatroom, format: :json)
-end
+json.array! @chatrooms, partial: 'chatrooms/chatroom', as: :chatroom
